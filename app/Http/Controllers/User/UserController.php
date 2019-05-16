@@ -16,7 +16,7 @@ class UserController extends Controller
         $data=$request->input();
         $data['u_pwd']=password_hash($data['u_pwd'],PASSWORD_DEFAULT);
         $data['u_time']=time();
-        $url="http://www.passport.com/api/reg";
+        $url="http://passport.highyr.com/api/reg";
         // echo $url;die;
         echo $this->postcurl($url,$data);
     }
@@ -25,14 +25,14 @@ class UserController extends Controller
     public function login(Request $request){
         $arr=$request->input();
         //dd($arr);
-        $url="http://www.passport.com/api/log";
+        $url="http://passport.highyr.com/api/log";
         echo $this->postcurl($url,$arr);
     }
 
     //个人中心(获得用户信息)
     public function user(){
         $u_id=$_GET['u_id'];
-        $url="http://www.passport.com/api/index?u_id=$u_id";
+        $url="http://passport.highyr.com/api/index?u_id=$u_id";
         $ch=curl_init();
         //通过 curl_setopt() 设置需要的全部选项
         curl_setopt($ch, CURLOPT_URL,$url);
