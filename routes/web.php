@@ -46,10 +46,8 @@ $router->get('goods/catr','Goods\GoodsController@catr');//商品展示
 $router->get('goods/car','Goods\GoodsController@car');//加入购物车
 
 $router->get('goods/shopping','Goods\GoodsController@shopping');//购物车列表
-
-
 $router->get('goods/shopping','Goods\GoodsController@shopping');//生成订单
-
 $router->get('goods/buy','Goods\GoodsController@buy');//生成订单
 
 $router->get('goods/drop','Goods\GoodsController@drop');//代发货
+$router->get('goods/submitorder','Goods\GoodsController@submitorder');//代发货
