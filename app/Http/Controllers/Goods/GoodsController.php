@@ -63,14 +63,13 @@ class GoodsController extends Controller
      */
 
     public function submitorder(){
-        $u_id=$_GET['u_id'];
         $goods_price=$_GET['goods_price'];
         $on_order=$_GET['on_order'];
-        $url='http://'.env('CAP_URL')."/goods/submitorder?u_id=$u_id&goods_price=$goods_price&on_order=$on_order";
+        $url='http://'.env('CAP_URL')."/goods/submitorder?goods_price=$goods_price&on_order=$on_order";
         echo $this->getcurl($url);
     }
 
-    
+
     // curl
     function getcurl($url){
         $ch=curl_init();
