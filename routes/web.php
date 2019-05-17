@@ -30,9 +30,26 @@ $router->get('/', function () use ($router) {
 //hbui
 $router->post('api/reg','User\UserController@reg');  //接受注册信息
 $router->post('api/log','User\UserController@login');  //接受登陆信息
-//$router->get('/user','User\UserController@user');  //个人中心
+//$router->get('/user','User\UserController@user');
 
+//个人中心
 $router->group(['middleware' => 'logintoken'], function () use ($router) {
  $router->get('api/user',['uses'=>'User\UserController@user']);
-});  //测试中间件(路由中间件)
+});
 
+
+$router->get('goods/list','Goods\GoodsController@list');//商品列表
+
+$router->get('goods/catr','Goods\GoodsController@catr');//商品展示
+
+
+$router->get('goods/car','Goods\GoodsController@car');//加入购物车
+
+$router->get('goods/shopping','Goods\GoodsController@shopping');//购物车列表
+
+
+$router->get('goods/shopping','Goods\GoodsController@shopping');//生成订单
+
+$router->get('goods/buy','Goods\GoodsController@buy');//生成订单
+
+$router->get('goods/drop','Goods\GoodsController@drop');//代发货
